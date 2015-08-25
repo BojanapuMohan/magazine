@@ -1,0 +1,112 @@
+<style type="text/css">
+
+.row-fluid .span7 {
+  width: 57.26495726495726%;
+  margin-left: 166%;
+  margin-top: -86%;
+}
+
+h1 {
+  
+  font-size: 32px;
+  font-weight: 300;
+  color: #4c4c4c;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+font-weight: bold;
+font-style: italic;
+}
+
+.form-horizontal .control-label{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.testbox {
+  margin: 19px;
+  width: 552%; 
+  height: 580px; 
+  -webkit-border-radius: 8px/7px; 
+  -moz-border-radius: 8px/7px; 
+  border-radius: 8px/7px; 
+  background-color: #ffffff;  
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: solid 1px #cbc9c9;
+}
+
+input[type=radio] {
+  visibility: hidden;
+}
+
+form{
+  margin: 0 -35px;
+}
+
+.form-horizontal input{
+
+  width: 400px;
+}
+.form-horizontal textarea{
+
+  width: 400px;
+}
+
+input[type="submit"].btn {
+width: 220px;
+}
+
+hr{
+  color: #a9a9a9;
+  opacity: 0.3;
+}
+
+
+
+
+</style>
+
+<div class="testbox">
+  <h1>Post Article</h1>
+  <hr></hr>
+
+<%= form_for @article, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :heading, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :heading, :class => 'text_field' %>
+    </div>
+  </div>
+   <div class="control-group">
+    <%= f.label :auther, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :auther, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :article, :rows => 10 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :attach_file, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :avatar, :class => 'text_field' %>
+    </div>
+    <%#= error_span(@article[:avatar_file_name]) %>
+  </div>
+
+  
+  <hr></hr>
+
+ <div class="row-fluid" style="padding-left: 179px;">
+    <%= f.submit nil, :class => 'btn' %>
+    <%#= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                articles_path, :class => 'btn' %>
+                </div>
+               
+  <% end %>
+</div>
